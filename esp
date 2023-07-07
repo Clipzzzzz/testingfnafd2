@@ -1,25 +1,25 @@
 local animatronics = {
-	[1] = {animatronic = "balloonboy", color1 = {255, 0, 0}, color2 = {121, 192, 255}},
-	[2] = {animatronic = "mangle", color1 = {255, 170, 255}, color2 = {255, 170, 255}},
-	[3] = {animatronic = "toybonnie", color1 = {47, 137, 255}, color2 = {47, 137, 255}},
-	[4] = {animatronic = "toychica", color1 = {255, 255, 0}, color2 = {255, 255, 0}},
-	[5] = {animatronic = "toyfreddy", color1 = {255, 141, 41}, color2 = {255, 141, 41}},
-	[6] = {animatronic = "witheredbonnie", color1 = {18, 51, 95}, color2 = {18, 51, 95}},
-	[7] = {animatronic = "witheredchica", color1 = {88, 88, 0}, color2 = {88, 88, 0}},
-	[8] = {animatronic = "witheredfreddy", color1 = {81, 45, 13}, color2 = {81, 45, 13}},
-	[9] = {animatronic = "witheredfoxy", color1 = {81, 0, 0}, color2 = {81, 0, 0}},
-	[10] = {animatronic = "puppet", color1 = {255, 255, 255}, color2 = {255, 255, 255}},
-	[11] = {animatronic = "goldenfreddy", color1 = {167, 145, 65}, color2 = {167, 145, 65}}
+	{"balloonboy", {255, 0, 0}, {121, 192, 255}},
+	{"mangle", {255, 170, 255}, {255, 170, 255}},
+	{"toybonnie", {47, 137, 255}, {47, 137, 255}},
+	{"toychica", {255, 255, 0}, {255, 255, 0}},
+	{"toyfreddy", {255, 141, 41}, {255, 141, 41}},
+	{"witheredbonnie", {18, 51, 95}, {18, 51, 95}},
+	{"witheredchica", {88, 88, 0}, {88, 88, 0}},
+	{"witheredfreddy", {81, 45, 13}, {81, 45, 13}},
+	{"witheredfoxy", {81, 0, 0}, {81, 0, 0}},
+	{"puppet", {255, 255, 255}, {255, 255, 255}},
+	{"goldenfreddy", {167, 145, 65}, {167, 145, 65}}
 }
 
 
 	for i,v in game.Workspace.Animatronics:GetChildren() do
-	for i,robot in animatronics do
+	for i,z in pairs(animatronics) do
 		local hightlight = Instance.new("Highlight")
 		hightlight.Parent = v
-		if v.Name == animatronics[robot].animatronic then
-			hightlight.FillColor = Color3.fromRGB(animatronics[robot].color1)
-			hightlight.OutlineColor = Color3.fromRGB(animatronics[robot].color2)
+		if v.Name == v[1] then
+				hightlight.FillColor = Color3.fromRGB(v[2][1],v[2][2],v[2][3])
+				hightlight.OutlineColor = Color3.fromRGB(v[3][1],v[3][2],v[3][3])
 			end
 		end
 	end
@@ -27,13 +27,13 @@ local animatronics = {
 game.Workspace.Animatronics.ChildAdded:Connect(function()
 	for i,v in game.Workspace.Animatronics:GetChildren() do
 		if v:FindFirstChildOfClass("Highlight") then return end
-		for i,robot in animatronics do
-			local hightlight = Instance.new("Highlight")
-			hightlight.Parent = v
-			if v.Name == animatronics[robot].animatronic then
-				hightlight.FillColor = Color3.fromRGB(animatronics[robot].color1)
-				hightlight.OutlineColor = Color3.fromRGB(animatronics[robot].color2)
+			for i,z in pairs(animatronics) do
+				local hightlight = Instance.new("Highlight")
+				hightlight.Parent = v
+				if v.Name == v[1] then
+					hightlight.FillColor = Color3.fromRGB(v[2][1],v[2][2],v[2][3])
+					hightlight.OutlineColor = Color3.fromRGB(v[3][1],v[3][2],v[3][3])
+				end
 			end
 		end
-	end
-end)
+	end)
