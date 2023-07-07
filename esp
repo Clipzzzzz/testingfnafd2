@@ -17,9 +17,9 @@ local animatronics = {
 	for i,robot in animatronics do
 		local hightlight = Instance.new("Highlight")
 		hightlight.Parent = v
-		if v.Name == animatronics[robot][1] then
-			hightlight.FillColor = animatronics[robot][2]
-				hightlight.OutlineColor = animatronics[robot][3]
+		if v.Name == animatronics[robot].animatronic then
+			hightlight.FillColor = animatronics[robot].color1
+				hightlight.OutlineColor = animatronics[robot].color2
 			end
 		end
 	end
