@@ -13,11 +13,11 @@ local animatronics = {
 }
 
 
-	for i,v in game.Workspace.Animatronics:GetChildren() do
-	for i,z in pairs(animatronics) do
+	for i,z in game.Workspace.Animatronics:GetChildren() do
+	for i,v in pairs(animatronics) do
 		local hightlight = Instance.new("Highlight")
-		hightlight.Parent = v
-		if v.Name == v[1] then
+		hightlight.Parent = z
+		if z.Name == v[1] then
 				hightlight.FillColor = Color3.fromRGB(v[2][1],v[2][2],v[2][3])
 				hightlight.OutlineColor = Color3.fromRGB(v[3][1],v[3][2],v[3][3])
 			end
@@ -25,12 +25,12 @@ local animatronics = {
 	end
 
 game.Workspace.Animatronics.ChildAdded:Connect(function()
-	for i,v in game.Workspace.Animatronics:GetChildren() do
-		if v:FindFirstChildOfClass("Highlight") then return end
-			for i,z in pairs(animatronics) do
+	for i,z in game.Workspace.Animatronics:GetChildren() do
+		if z:FindFirstChildOfClass("Highlight") then return end
+			for i,v in pairs(animatronics) do
 				local hightlight = Instance.new("Highlight")
-				hightlight.Parent = v
-				if v.Name == v[1] then
+				hightlight.Parent = z
+				if z.Name == v[1] then
 					hightlight.FillColor = Color3.fromRGB(v[2][1],v[2][2],v[2][3])
 					hightlight.OutlineColor = Color3.fromRGB(v[3][1],v[3][2],v[3][3])
 				end
