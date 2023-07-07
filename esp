@@ -1,47 +1,38 @@
 local animatronics = {
-	[1] = {animatronic = "balloonboy", color1 = Color3.fromRGB(255, 0, 0), color2 = Color3.fromRGB(121, 192, 255)},
-	[2] = {animatronic = "mangle", color1 = Color3.fromRGB(255, 170, 255), color2 = Color3.fromRGB(255, 170, 255)},
-	[3] = {animatronic = "toybonnie", color1 = Color3.fromRGB(47, 137, 255), color2 = Color3.fromRGB(47, 137, 255)},
-	[4] = {animatronic = "toychica", color1 = Color3.fromRGB(255, 255, 0), color2 = Color3.fromRGB(255, 255, 0)},
-	[5] = {animatronic = "toyfreddy", color1 = Color3.fromRGB(255, 141, 41), color2 = Color3.fromRGB(255, 141, 41)},
-	[6] = {animatronic = "witheredbonnie", color1 = Color3.fromRGB(18, 51, 95), color2 = Color3.fromRGB(18, 51, 95)},
-	[7] = {animatronic = "witheredchica", color1 = Color3.fromRGB(88, 88, 0), color2 = Color3.fromRGB(88, 88, 0)},
-	[8] = {animatronic = "witheredfreddy", color1 = Color3.fromRGB(81, 45, 13), color2 = Color3.fromRGB(81, 45, 13)},
-	[9] = {animatronic = "witheredfoxy", color1 = Color3.fromRGB(81, 0, 0), color2 = Color3.fromRGB(81, 0, 0)},
-	[10] = {animatronic = "puppet", color1 = Color3.fromRGB(255, 255, 255), color2 = Color3.fromRGB(255, 255, 255)},
+	[1] = {animatronic = "balloonboy", color1 = Color3.fromRGB(255, 0, 0), color2 = Color3.fromRGB(121, 192, 255),},
+	[2] = {animatronic = "mangle", color1 = Color3.fromRGB(255, 170, 255), color2 = Color3.fromRGB(255, 170, 255),},
+	[3] = {animatronic = "toybonnie", color1 = Color3.fromRGB(47, 137, 255), color2 = Color3.fromRGB(47, 137, 255),},
+	[4] = {animatronic = "toychica", color1 = Color3.fromRGB(255, 255, 0), color2 = Color3.fromRGB(255, 255, 0),},
+	[5] = {animatronic = "toyfreddy", color1 = Color3.fromRGB(255, 141, 41), color2 = Color3.fromRGB(255, 141, 41),},
+	[6] = {animatronic = "witheredbonnie", color1 = Color3.fromRGB(18, 51, 95), color2 = Color3.fromRGB(18, 51, 95),},
+	[7] = {animatronic = "witheredchica", color1 = Color3.fromRGB(88, 88, 0), color2 = Color3.fromRGB(88, 88, 0),},
+	[8] = {animatronic = "witheredfreddy", color1 = Color3.fromRGB(81, 45, 13), color2 = Color3.fromRGB(81, 45, 13),},
+	[9] = {animatronic = "witheredfoxy", color1 = Color3.fromRGB(81, 0, 0), color2 = Color3.fromRGB(81, 0, 0),},
+	[10] = {animatronic = "puppet", color1 = Color3.fromRGB(255, 255, 255), color2 = Color3.fromRGB(255, 255, 255),},
 	[11] = {animatronic = "goldenfreddy", color1 = Color3.fromRGB(167, 145, 65), color2 = Color3.fromRGB(167, 145, 65)}
 }
 
 
-for i,v in game.Workspace.Animatronics:GetChildren() do
-	print("Got children in animatronic folder")
+	for i,v in game.Workspace.Animatronics:GetChildren() do
 	for i,robot in animatronics do
-		print("Got robot in animatronic list")
 		local hightlight = Instance.new("Highlight")
-		local hightlightclone = hightlight:Clone()
-		hightlightclone.Parent = v
-		if v.Name == robot[1] then
-			hightlightclone.FillColor = robot[2]
-			hightlightclone.OutlineColor = robot[3]
+		hightlight.Parent = v
+		if v.Name == animatronics[robot][1] then
+			hightlight.FillColor = animatronics[robot][2]
+				hightlight.OutlineColor = animatronics[robot][3]
+			end
 		end
 	end
-end
 
 game.Workspace.Animatronics.ChildAdded:Connect(function()
-	print("Function when children are added to the animatronic folder")
 	for i,v in game.Workspace.Animatronics:GetChildren() do
-		print("Got robot in animatronic list")
-		if v:FindFirstChildOfClass("Highlight") then
-			print("ended")
-			return
-		end
+		if v:FindFirstChildOfClass("Highlight") then return end
 		for i,robot in animatronics do
 			local hightlight = Instance.new("Highlight")
-			local hightlightclone = hightlight:Clone()
-			hightlightclone.Parent = v
+			hightlight.Parent = v
 			if v.Name == animatronics[robot][1] then
-				hightlightclone.FillColor = robot[2]
-				hightlightclone.OutlineColor = robot[3]
+				hightlight.FillColor = animatronics[robot][2]
+				hightlight.OutlineColor = animatronics[robot][3]
 			end
 		end
 	end
