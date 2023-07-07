@@ -21,8 +21,8 @@ print("Got robot in animatronic list")
 	local hightlightclone = hightlight:Clone()
 	hightlightclone.Parent = v
 		if v.Name == animatronics[robot][1] then
-			hightlight.FillColor = animatronics[robot][2]
-				hightlight.OutlineColor = animatronics[robot][3]
+			hightlightclone.FillColor = animatronics[robot][2]
+				hightlightclone.OutlineColor = animatronics[robot][3]
 			end
 		end
 	end
@@ -40,8 +40,8 @@ print("ended")
 			local hightlightclone = hightlight:Clone()
 			hightlightclone.Parent = v
 			if v.Name == animatronics[robot][1] then
-				hightlight.FillColor = animatronics[robot][2]
-				hightlight.OutlineColor = animatronics[robot][3]
+				hightlightclone.FillColor = animatronics[robot][2]
+				hightlightclone.OutlineColor = animatronics[robot][3]
 			end
 		end
 	end
