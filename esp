@@ -13,35 +13,35 @@ local animatronics = {
 }
 
 
-	for i,v in game.Workspace.Animatronics:GetChildren() do
-print("Got children in animatronic folder")
+for i,v in game.Workspace.Animatronics:GetChildren() do
+	print("Got children in animatronic folder")
 	for i,robot in animatronics do
-print("Got robot in animatronic list")
-	local hightlight = Instance.new("Highlight")
-	local hightlightclone = hightlight:Clone()
-	hightlightclone.Parent = v
-		if v.Name == animatronics[robot][1] then
-			hightlightclone.FillColor = animatronics[robot][2]
-				hightlightclone.OutlineColor = animatronics[robot][3]
-			end
+		print("Got robot in animatronic list")
+		local hightlight = Instance.new("Highlight")
+		local hightlightclone = hightlight:Clone()
+		hightlightclone.Parent = v
+		if v.Name == robot[1] then
+			hightlightclone.FillColor = robot[2]
+			hightlightclone.OutlineColor = robot[3]
 		end
 	end
+end
 
 game.Workspace.Animatronics.ChildAdded:Connect(function()
-print("Function when children are added to the animatronic folder")
+	print("Function when children are added to the animatronic folder")
 	for i,v in game.Workspace.Animatronics:GetChildren() do
-print("Got robot in animatronic list")
+		print("Got robot in animatronic list")
 		if v:FindFirstChildOfClass("Highlight") then
-print("ended")
- return
- end
+			print("ended")
+			return
+		end
 		for i,robot in animatronics do
 			local hightlight = Instance.new("Highlight")
 			local hightlightclone = hightlight:Clone()
 			hightlightclone.Parent = v
 			if v.Name == animatronics[robot][1] then
-				hightlightclone.FillColor = animatronics[robot][2]
-				hightlightclone.OutlineColor = animatronics[robot][3]
+				hightlightclone.FillColor = robot[2]
+				hightlightclone.OutlineColor = robot[3]
 			end
 		end
 	end
