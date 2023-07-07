@@ -16,7 +16,8 @@ local animatronics = {
 	for i,v in game.Workspace.Animatronics:GetChildren() do
 	for i,robot in animatronics do
 	local hightlight = Instance.new("Highlight")
-	hightlight.Parent = v
+	local hightlightclone = hightlight:Clone()
+	hightlightclone.Parent = v
 		if v.Name == animatronics[robot][1] then
 			hightlight.FillColor = animatronics[robot][2]
 				hightlight.OutlineColor = animatronics[robot][3]
@@ -29,7 +30,8 @@ game.Workspace.Animatronics.ChildAdded:Connect(function()
 		if v:FindFirstChildOfClass("Highlight") then return end
 		for i,robot in animatronics do
 			local hightlight = Instance.new("Highlight")
-			hightlight.Parent = v
+			local hightlightclone = hightlight:Clone()
+			hightlightclone.Parent = v
 			if v.Name == animatronics[robot][1] then
 				hightlight.FillColor = animatronics[robot][2]
 				hightlight.OutlineColor = animatronics[robot][3]
