@@ -20,6 +20,8 @@ local dragSpeed = 0.25
 local dragStart = nil
 local startPos = nil
 
+local UIS = game:GetService("UserInputService")
+
 local function updateInput(input)
 	local delta = input.Position - dragStart
 	local position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X,
