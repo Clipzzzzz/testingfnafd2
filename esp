@@ -2,7 +2,7 @@ local modstuff = game.StarterGui.ModStuff
 modstuff.Parent = game.Players.LocalPlayer.PlayerGui
 modstuff.Stuff.Visible = true
 
-local success, response = pcall(function()
+--[[local success, response = pcall(function()
 	for i,v in game.Players.LocalPlayer.PlayerGui.Panel:GetChildren() do
 		v.Visible = true
 	end
@@ -12,7 +12,7 @@ local success, response = pcall(warn("Completed"))
 
 if not success then
 	warn("There was an error, couldnt be completed.")
-end
+end]]
 
 modstuff.Stuff.Positon = UDim2.new(0.5, 0, 0.5, 0)
 modstuff.Stuff.AnchorPoint = Vector2(0.5, 0.5)
