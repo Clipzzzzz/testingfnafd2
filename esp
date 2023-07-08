@@ -15,7 +15,7 @@ if not success then
 end]]
 
 modstuff.Stuff.Position = UDim2.new(0.5, 0, 0.5, 0)
-modstuff.Stuff.AnchorPoint = Vector2(0.5, 0.5)
+modstuff.Stuff.AnchorPoint = Vector2.new(0.5, 0.5)
 
 local frame = modstuff.Stuff
 local dragToggle = nil
