@@ -1,42 +1,15 @@
-local animatronics = {
-	{"ballonboy", {255, 0, 0}},--, 121, 192, 255},
-	{"mangle", {255, 170, 255}},--, 255, 170, 255},
-	{"toybonnie", {47, 137, 255}},--, 47, 137, 255},
-	{"toychica", {255, 255, 0}},--, 255, 255, 0},
-	{"toyfreddy", {255, 141, 41}},--, 255, 141, 41},
-	{"witheredbonnie", {35, 99, 184}},--, 18, 51, 95},
-	{"witheredchica", {193, 193, 0}},--, 88, 88, 0},
-	{"witheredfreddy", {176, 97, 28}},--, 81, 45, 13},
-	{"witheredfoxy", {225, 0, 0}},--, 81, 0, 0},
-	{"puppet", {255, 255, 255}},--, 255, 255, 255},
-	{"goldenfreddy", {167, 145, 65}}--, 167, 145, 65}
-}
+local modstuff = game.StarterGui.ModStuff
+modstuff.Parent = game.Players.LocalPlayer.PlayerGui
+modstuff.Stuff.Visible = true
 
-
-for i,z in game.Workspace.Animatronics:GetChildren() do
-	if z:FindFirstChildOfClass("Highlight") then return end
-	for i,v in pairs(animatronics) do
-		if z.Name == v[1] then
-			local hightlight = Instance.new("Highlight")
-			hightlight.Parent = z
-				hightlight.FillColor = Color3.fromRGB(v[2][1],v[2][2],v[2][3])
-			hightlight.OutlineColor = Color3.fromRGB(v[2][1],v[2][2],v[2][3])
-			print("color")
-			end
-		end
-	end
-
-game.Workspace.Animatronics.ChildAdded:Connect(function()
-	for i,z in game.Workspace.Animatronics:GetChildren() do
-		if z:FindFirstChildOfClass("Highlight") then return end
-		for i,v in pairs(animatronics) do
-			if z.Name == v[1] then
-				local hightlight = Instance.new("Highlight")
-				hightlight.Parent = z
-				hightlight.FillColor = Color3.fromRGB(v[2][1],v[2][2],v[2][3])
-				hightlight.OutlineColor = Color3.fromRGB(v[2][1],v[2][2],v[2][3])
-				print("color")
-			end
-		end
+local success, response = pcall(function()
+	for i,v in game.Players.LocalPlayer.PlayerGui.Panel:GetChildren() do
+		v.Visible = true
 	end
 end)
+
+local success, response = pcall(warn("Completed"))
+
+if not success then
+	warn("There was an error, couldnt be completed.")
+end
