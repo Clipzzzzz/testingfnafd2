@@ -18,11 +18,9 @@ for i,z in game.Workspace.Animatronics:GetChildren() do
 	for i,v in pairs(animatronics) do
 		local hightlight = Instance.new("Highlight")
 		hightlight.Parent = z
-		if z.Name == v[1] then
 				hightlight.FillColor = Color3.fromRGB(v[2][1],v[2][2],v[2][3])
 			hightlight.OutlineColor = Color3.fromRGB(v[2][1],v[2][2],v[2][3])
 			print("color")
-			end
 		end
 	end
 
