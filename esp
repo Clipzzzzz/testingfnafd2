@@ -7,12 +7,16 @@ local success, response = pcall(function()
 		v.Visible = true
 	end
 end)
-
-local success, response = pcall(warn("Completed"))
+if success then
+	warn("Successful")
+end
 
 if not success then
-	warn("There was an error, couldnt be completed.")
+	error("There was an error, couldnt be completed.")
 end
+
+modstuff.Stuff.Positon = UDim2.new(0.5, 0, 0.5, 0)
+modstuff.Stuff.AnchorPoint = Vector2(0.5, 0.5)
 
 local frame = modstuff.Stuff
 local dragToggle = nil
