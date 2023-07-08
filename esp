@@ -1,15 +1,15 @@
 local animatronics = {
-	{"balloonboy", {255, 0, 0}, {121, 192, 255}},
-	{"mangle", {255, 170, 255}, {255, 170, 255}},
-	{"toybonnie", {47, 137, 255}, {47, 137, 255}},
-	{"toychica", {255, 255, 0}, {255, 255, 0}},
-	{"toyfreddy", {255, 141, 41}, {255, 141, 41}},
-	{"witheredbonnie", {18, 51, 95}, {18, 51, 95}},
-	{"witheredchica", {88, 88, 0}, {88, 88, 0}},
-	{"witheredfreddy", {81, 45, 13}, {81, 45, 13}},
-	{"witheredfoxy", {81, 0, 0}, {81, 0, 0}},
-	{"puppet", {255, 255, 255}, {255, 255, 255}},
-	{"goldenfreddy", {167, 145, 65}, {167, 145, 65}}
+	{"balloonboy", {255, 0, 0}, 121, 192, 255},
+	{"mangle", {255, 170, 255}, 255, 170, 255},
+	{"toybonnie", {47, 137, 255}, 47, 137, 255},
+	{"toychica", {255, 255, 0}, 255, 255, 0},
+	{"toyfreddy", {255, 141, 41}, 255, 141, 41},
+	{"witheredbonnie", {18, 51, 95}, 18, 51, 95},
+	{"witheredchica", {88, 88, 0}, 88, 88, 0},
+	{"witheredfreddy", {81, 45, 13}, 81, 45, 13},
+	{"witheredfoxy", {81, 0, 0}, 81, 0, 0},
+	{"puppet", {255, 255, 255}, 255, 255, 255},
+	{"goldenfreddy", {167, 145, 65}, 167, 145, 65}
 }
 
 
@@ -19,7 +19,8 @@ local animatronics = {
 		hightlight.Parent = z
 		if z.Name == v[1] then
 				hightlight.FillColor = Color3.fromRGB(v[2][1],v[2][2],v[2][3])
-				hightlight.OutlineColor = Color3.fromRGB(v[3][1],v[3][2],v[3][3])
+			hightlight.OutlineColor = Color3.fromRGB(v[3][1],v[3][2],v[3][3])
+			print("color")
 			end
 		end
 	end
