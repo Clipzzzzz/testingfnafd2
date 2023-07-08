@@ -13,11 +13,9 @@ local animatronics = {
 }
 
 
-	for i,z in game.Workspace.Animatronics:GetChildren() do
+for i,z in game.Workspace.Animatronics:GetChildren() do
+	if z:FindFirstChildOfClass("Highlight") then return end
 	for i,v in pairs(animatronics) do
-		if z:FindFirstChildOfClass("Highlight") then 
-			z:FindFirstChildOfClass("Highlight"):Destroy()
-		end
 		local hightlight = Instance.new("Highlight")
 		hightlight.Parent = z
 		if z.Name == v[1] then
